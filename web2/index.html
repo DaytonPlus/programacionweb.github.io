@@ -1,35 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/global.css">
+    <title>Iniciar SesiÃ³n</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Google Fonts Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="./styles/global.css" type="text/css" media="all" />
 </head>
-<body>
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="panel">
-            <h2 class="text-center">Iniciar Sesión</h2>
-            <form>
-                <div class="form-group">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario">
+
+<body class="d-flex flex-column align-items-center justify-content-center min-vh-100 bg-light">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <div class="card shadow-lg border-0 p-4 card-custom">
+                    <div class="text-center mb-4">
+                        <div class="d-inline-flex align-items-center justify-content-center mb-3 bg-primary icon-container">
+                            <i class="fas fa-user-lock fa-2x"></i>
+                        </div>
+                        <h2 class="fw-bold">Iniciar SesiÃ³n</h2>
+                        <p class="text-muted">Por favor, inicia sesiÃ³n para continuar</p>
+                    </div>
+
+                    <form>
+                        <div class="form-floating mb-3 position-relative">
+                            <input type="text" id="usuario" class="form-control" placeholder="Usuario" required>
+                            <label for="usuario"><i class="fas fa-user me-2"></i>Usuario</label>
+                        </div>
+
+                        <div class="form-floating mb-3 position-relative">
+                            <input type="password" id="password" class="form-control" placeholder="ContraseÃ±a" required>
+                            <label for="password"><i class="fas fa-lock me-2"></i>ContraseÃ±a</label>
+
+                            <span class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg fw-bold">Acceder</button>
+                            <button type="reset" class="btn btn-outline-secondary btn-lg">Cancelar</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <a href="#" class="text-decoration-none">&clubs; by David V. &copy; 2025 &clubs;</a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="contraseña">Contraseña</label>
-                    <input type="password" class="form-control" id="contraseña" placeholder="Ingrese su contraseña">
-                </div>
-                <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary">Acceder</button>
-                    <button type="button" class="btn btn-secondary">Cancelar</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const password = document.getElementById('password');
+            const i = this.querySelector('i');
+            password.type = password.type === 'password' ? 'text' : 'password';
+            i.classList.toggle('fa-eye');
+            i.classList.toggle('fa-eye-slash');
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

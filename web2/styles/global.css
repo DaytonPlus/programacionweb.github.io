@@ -1,0 +1,37 @@
+/*
+  @author: David V. Morales
+  @version: 1.0
+  @description: Diseño minimalista moderno con un esquema de color claro y limpio.
+  @date: 05/03/2025
+  @keywords: minimalismo, diseño moderno, esquema claro
+  @license: GNU
+*/
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-custom {
+    max-width: 400px;
+    width: 100%;
+}
+
+.icon-container {
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 20px;
+}
