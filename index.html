@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrutador Moderno</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fuente Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            padding: 20px;
+            width: 350px;
+        }
+
+        .folder {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .folder:hover {
+            transform: scale(1.05);
+        }
+
+        .folder img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .folder a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Enrutador</h1>
+        <div class="folder bg-light p-2 shadow-sm" id="folder-main">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Carpeta principal">
+            <a href="https://daytonplus.github.io/programacionweb.github.io/">Carpeta principal</a>
+        </div>
+        <div class="folder bg-light p-2 shadow-sm" id="folder-web1">
+            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="Subcarpeta web1">
+            <a href="https://daytonplus.github.io/programacionweb.github.io/web1">Subcarpeta Web1</a>
+        </div>
+        <div class="folder bg-light p-2 shadow-sm" id="folder-web2">
+            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="Subcarpeta web2">
+            <a href="https://daytonplus.github.io/programacionweb.github.io/web2">Subcarpeta Web2</a>
+        </div>
+    </div>
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        // Animación al cargar la página
+        anime({
+            targets: '.container',
+            opacity: [0, 1],
+            translateY: [-50, 0],
+            duration: 1000,
+            easing: 'easeOutQuad'
+        });
+
+        // Animación de hover para las carpetas
+        document.querySelectorAll('.folder').forEach(folder => {
+            folder.addEventListener('mouseover', () => {
+                anime({
+                    targets: folder,
+                    scale: [1, 1.05],
+                    duration: 300,
+                    easing: 'easeInOutQuad'
+                });
+            });
+
+            folder.addEventListener('mouseout', () => {
+                anime({
+                    targets: folder,
+                    scale: [1.05, 1],
+                    duration: 300,
+                    easing: 'easeInOutQuad'
+                });
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS (opcional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
